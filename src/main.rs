@@ -8,8 +8,8 @@ fn main() {
     // add all arguments (minus program name) to a single &str
     let args: Vec<String> = env::args().collect();
     let mut string = String::new();
-    for i in 1..args.len() {
-        string.push_str(&args[i]);
+    for i in args.iter().skip(1) {
+        string.push_str(i);
     }
     // generate a port number from the string
     let port = port_gen(&string);
