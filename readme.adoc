@@ -1,0 +1,23 @@
+= Port Generator (written in Rust)
+devawaves <hi@dessa.dev>
+:toc:
+
+== What is this?
+
+Portgen is a tool that takes in a string and generates a port number based on that string. This is useful for generating a port number for a service based on its name, so that the port number is deterministic and consistent across different environments.
+A port number will _never_ change for a given input string, so you can be sure that the same input string will always generate the same port number.
+
+== How To Use
+
+If you have nix, simply run:
+[source,shell]
+----
+nix run github:devawaves/portgen <input_string>
+----
+
+Otherwise, you can build the binary yourself by running:
+[source,shell]
+----
+cargo build --release
+./target/release/portgen <input_string>
+----
